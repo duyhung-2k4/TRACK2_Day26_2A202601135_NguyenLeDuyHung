@@ -1,0 +1,38 @@
+{
+  "3148952c": {
+    "c_frames": 7,
+    "delta": 0,
+    "drifts": false,
+    "w_frames": 7
+  },
+  "62fa4da7": {
+    "c_frames": 6,
+    "delta": 2,
+    "drifts": true,
+    "w_frames": 8
+  },
+  "8c5bf8f6": {
+    "c_frames": 5,
+    "delta": 3,
+    "drifts": true,
+    "w_frames": 8
+  },
+  "e0614beb": {
+    "w_frames": 45,
+    "c_frames": 31,
+    "drifts": true,
+    "delta": 14
+  },
+  "053195a5": {
+    "w_frames": 10,
+    "c_frames": 10,
+    "drifts": true,
+    "delta": 0
+  },
+  "3326cb76": {
+    "w_frames": 5,
+    "c_frames": 5,
+    "drifts": false,
+    "delta": 0
+  }
+}

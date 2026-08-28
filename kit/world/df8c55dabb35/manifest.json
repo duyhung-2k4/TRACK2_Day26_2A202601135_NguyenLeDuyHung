@@ -1,0 +1,18 @@
+{
+  "built_at": "2026-08-27T00:00:00Z",
+  "corpus_sha": "sha256:aee533657dbf9fe43c7bc9290c6f4fa31a5f0047d1e819c04c8ddfbc53b62909",
+  "counts": {
+    "Claim": 2,
+    "Concept": 13,
+    "Deck": 6,
+    "Frame": 41,
+    "Glossary": 2,
+    "Learner": 3,
+    "Note": 6,
+    "Source": 5,
+    "Talk": 2,
+    "total": 96
+  },
+  "slice": "main",
+  "world_id": "df8c55dabb35"
+}

@@ -1,0 +1,69 @@
+{
+  "authority vs identity": [
+    "Concept:authority-vs-identity"
+  ],
+  "context window budget": [
+    "Concept:context-window-budget"
+  ],
+  "drift detection": [
+    "Concept:drift-detection"
+  ],
+  "dynamic cost": [
+    "Concept:dynamic-cost"
+  ],
+  "endpoint": [
+    "Glossary:endpoint-mcp",
+    "Glossary:endpoint-network"
+  ],
+  "etag": [
+    "Concept:if-match-etag"
+  ],
+  "field mask": [
+    "Concept:field-mask"
+  ],
+  "gateway decision": [
+    "Concept:gateway-decision"
+  ],
+  "http+sse": [
+    "Concept:streamable-http"
+  ],
+  "if-match": [
+    "Concept:if-match-etag"
+  ],
+  "latent violation": [
+    "Concept:latent-violation"
+  ],
+  "lease": [
+    "Concept:lease-token"
+  ],
+  "lease token": [
+    "Concept:lease-token"
+  ],
+  "prosecution claim": [
+    "Concept:prosecution-claim"
+  ],
+  "quarantine": [
+    "Concept:quarantine-forward"
+  ],
+  "rate limit window": [
+    "Concept:rate-limit-window"
+  ],
+  "streamable http": [
+    "Concept:streamable-http"
+  ],
+  "streamable http transport": [
+    "Concept:streamable-http"
+  ],
+  "mcp registry": [
+    "Glossary:mcp-registry"
+  ],
+  "agent card": [
+    "Note:learner-sv-0412/w/005"
+  ],
+  "delegation depth": [
+    "Concept:authority-vs-identity"
+  ],
+  "traceparent header": [
+    "Concept:traceparent-header/w/062"
+  ]
+}

@@ -5,6 +5,5 @@ __pycache__/
 # Keep the sealed submission bundle in Git so an instructor can download the
 # exact artifact that was validated locally.  Generated run logs remain local.
 runs/
-kit/world/*/
 !kit/world/*.py
 *.local.json

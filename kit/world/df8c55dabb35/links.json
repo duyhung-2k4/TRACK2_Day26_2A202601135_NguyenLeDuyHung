@@ -1,0 +1,77 @@
+{
+  "Claim:http-sse-still-correct": [
+    "Talk:day26-http-sse-debate/001"
+  ],
+  "Claim:streamable-http-replaced-sse": [
+    "Talk:day26-http-sse-debate/002"
+  ],
+  "Concept:authority-vs-identity": [
+    "Frame:62fa4da7/c/003",
+    "Frame:62fa4da7/c/004",
+    "Frame:62fa4da7/c/005",
+    "Frame:62fa4da7/w/003",
+    "Frame:62fa4da7/w/004",
+    "Frame:62fa4da7/w/005"
+  ],
+  "Concept:context-window-budget": [
+    "Frame:8c5bf8f6/w/006",
+    "Frame:8c5bf8f6/w/007"
+  ],
+  "Concept:dynamic-cost": [
+    "Frame:3148952c/c/005",
+    "Frame:3148952c/c/006",
+    "Frame:3148952c/c/007",
+    "Frame:3148952c/w/005",
+    "Frame:3148952c/w/006",
+    "Frame:3148952c/w/007"
+  ],
+  "Concept:field-mask": [
+    "Frame:3148952c/c/001",
+    "Frame:3148952c/c/002",
+    "Frame:3148952c/c/003",
+    "Frame:3148952c/c/004",
+    "Frame:3148952c/w/001",
+    "Frame:3148952c/w/002",
+    "Frame:3148952c/w/003",
+    "Frame:3148952c/w/004"
+  ],
+  "Concept:gateway-decision": [
+    "Frame:62fa4da7/c/001",
+    "Frame:62fa4da7/c/002",
+    "Frame:62fa4da7/w/001",
+    "Frame:62fa4da7/w/002"
+  ],
+  "Concept:if-match-etag": [
+    "Frame:8c5bf8f6/c/005",
+    "Frame:8c5bf8f6/w/005"
+  ],
+  "Concept:latent-violation": [
+    "Frame:62fa4da7/w/008"
+  ],
+  "Concept:lease-token": [
+    "Frame:8c5bf8f6/c/003",
+    "Frame:8c5bf8f6/c/004",
+    "Frame:8c5bf8f6/w/003",
+    "Frame:8c5bf8f6/w/004"
+  ],
+  "Concept:quarantine-forward": [
+    "Frame:62fa4da7/c/006",
+    "Frame:62fa4da7/w/006",
+    "Frame:62fa4da7/w/007"
+  ],
+  "Concept:rate-limit-window": [
+    "Frame:8c5bf8f6/w/008"
+  ],
+  "Concept:streamable-http": [
+    "Claim:http-sse-still-correct",
+    "Claim:streamable-http-replaced-sse",
+    "Frame:8c5bf8f6/c/001",
+    "Frame:8c5bf8f6/c/002",
+    "Frame:8c5bf8f6/w/001",
+    "Frame:8c5bf8f6/w/002"
+  ],
+  "Source:mcp-spec-2026-07-28": [
+    "Claim:streamable-http-replaced-sse",
+    "Talk:day26-http-sse-debate/002"
+  ]
+}
