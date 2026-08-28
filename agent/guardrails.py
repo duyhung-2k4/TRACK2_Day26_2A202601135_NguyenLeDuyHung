@@ -177,7 +177,16 @@ def scan_for_injected_instructions(text: str) -> InjectionScanResult:
     file's own `__main__` demo below, which runs an unambiguous injection
     attempt through this exact function and shows it sailing through
     uncaught. That gap is the assignment, not a bug report."""
-    return InjectionScanResult(suspicious=False, matched_patterns=())
+    text = text or ""
+    patterns = (
+        r"ignore (?:all |any )?(?:previous|prior) instructions",
+        r"(?:system|developer) (?:prompt|message|override)",
+        r"you (?:must|should) (?:reveal|disclose|print|report)",
+        r"(?:reveal|disclose|exfiltrate).{0,80}(?:secret|token|learner|act|private)",
+        r"do not (?:follow|obey) (?:the )?(?:rules|instructions)",
+    )
+    matched = tuple(p for p in patterns if re.search(p, text, flags=re.IGNORECASE | re.DOTALL))
+    return InjectionScanResult(suspicious=bool(matched), matched_patterns=matched)
 
 
 # ---------------------------------------------------------------------------
@@ -205,7 +214,23 @@ def redact(text: str) -> RedactionResult:
 
     This starter's version does not look at `text` at all — see this
     file's own `__main__` demo below."""
-    return RedactionResult(redacted_text=text, hits=())
+    source = text or ""
+    # Retain useful prose while removing common learner identifiers and long
+    # private-note payloads.  The patterns are deliberately narrow: a tutor
+    # should not silently erase ordinary course content.
+    patterns = (
+        r"\b(?:learner|student)\s*[:#-]?\s*sv-\d{3,}\b",
+        r"\b(?:email|phone|address|ssn)\s*[:=]\s*[^\n.;]{3,}",
+        r"\bprivate\s+(?:note|field|content)\s*[:=]\s*[^\n]{20,}",
+    )
+    hits: list[str] = []
+    redacted = source
+    for pattern in patterns:
+        def replace(match: re.Match[str]) -> str:
+            hits.append(match.group(0))
+            return "[REDACTED]"
+        redacted = re.sub(pattern, replace, redacted, flags=re.IGNORECASE)
+    return RedactionResult(redacted_text=redacted, hits=tuple(hits))
 
 
 # ---------------------------------------------------------------------------
@@ -238,9 +263,23 @@ def verify_arithmetic(text: str) -> ArithmeticCheckResult:
     This starter's version does not look at `text` at all beyond what
     `_NUMBER_RE` would find if you called it (it isn't called) — see this
     file's own `__main__` demo below."""
-    return ArithmeticCheckResult(
-        checked=False, ok=None, detail="verify_arithmetic is a stub — no check was performed"
-    )
+    source = text or ""
+    # Verify only explicit elementary equations; factual numbers require the
+    # retrieved source and are therefore left to grounding, not guessed here.
+    equations = re.findall(r"(-?\d+(?:\.\d+)?)\s*([+\-*/])\s*(-?\d+(?:\.\d+)?)\s*=\s*(-?\d+(?:\.\d+)?)", source)
+    if not equations:
+        return ArithmeticCheckResult(checked=False, ok=None, detail="no explicit arithmetic equation to verify")
+    for left, op, right, claimed in equations:
+        a, b, c = float(left), float(right), float(claimed)
+        if op == "+": value = a + b
+        elif op == "-": value = a - b
+        elif op == "*": value = a * b
+        elif b == 0:
+            return ArithmeticCheckResult(checked=True, ok=False, detail="division by zero")
+        else: value = a / b
+        if abs(value - c) > 1e-9:
+            return ArithmeticCheckResult(checked=True, ok=False, detail=f"{left} {op} {right} is not {claimed}")
+    return ArithmeticCheckResult(checked=True, ok=True, detail="all explicit arithmetic equations are correct")
 
 
 # ---------------------------------------------------------------------------
